@@ -1,6 +1,7 @@
 {
-  "name": "Penpot starter plugin",
+  "name": "Dice Roll!",
+  "icon": "../src/media/icon.png",
   "code": "plugin.js",
-  "description": "This is a starter plugin for Penpot",
-  "permissions": ["content:read", "content:write"]
+  "description": "A plugin to do dice rolls :)",
+  "permissions": ["content:write"]
 }

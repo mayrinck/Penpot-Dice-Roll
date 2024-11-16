@@ -63,7 +63,7 @@
       }
     </style>
 
-    <title>Dice Roll</title>
+    <title>🎲 Dice Roll!</title>
   </head>
 <!-- -------------------- -->
   <body>
@@ -73,7 +73,7 @@
       </p>
     </div>
 
-    <button id="roll" type="button">🎲 Roll the dice!</button>
+    <button id="roll" type="button">Roll the dice!</button>
 
     <audio id="dice-1"><source src="./src/audio/Dice-1.ogg" type="audio/ogg"></audio>
     <audio id="dice-2"><source src="./src/audio/Dice-2.ogg" type="audio/ogg"></audio>
@@ -84,11 +84,11 @@
       const random = document.getElementById("text");
       const roll = document.getElementById("roll");
 
-      function sort(remaining){
-          if (remaining < 0) {
-            random.style.opacity = "1";
-            return;
-          }
+      function sort(remaining) {
+        if (remaining < 0) {
+          random.style.opacity = "1";
+          return;
+        }
           random.innerText = Math.round(5 * Math.random() + 1);
           setTimeout(()=>sort(remaining - 1), 50);
       }
@@ -102,14 +102,28 @@
 
       const lang = navigator.language || navigator.userLanguage;
 
-      if (lang == "pt-BR") {
-        roll.innerText = "Role os dados!"
-      } 
-      else if (lang == "es") {
-        roll.innerText = "Jugar!"
-      else {
-        roll.innerText = "Roll the dice!"
+      if (lang == "pt") {
+        roll.innerText = "Role os dados!" //Português
+      } else if (lang == "es") { 
+        roll.innerText = "¡tira los dados!" //Espanhol
+      } else if (lang == "ru") { 
+        roll.innerText = "бросьте кости!" //Russo
+      } else if (lang == "eo") { 
+        roll.innerText = "rulu la ĵetkubojn!" //Esperanto
+      } else if (lang == "de") { 
+        roll.innerText = "Lass die Würfel rollen!" //Alemão
+      } else if (lang == "fr") { 
+        roll.innerText = "lancez les dés!" //Francês
+      } else if (lang == "ko") { 
+        roll.innerText = "주사위를 굴려라!" //Coreano
+      } else if (lang == "ja") { 
+        roll.innerText = "サイコロを振る" //Japonês
+      } else if (lang == "zh") { 
+        roll.innerText = "掷骰子" //Chinês
+      } else {
+        roll.innerText = "Roll the dice!" //Inglês (fallback)
       }
+
     </script>
   </body>
 </html>

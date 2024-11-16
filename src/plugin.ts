@@ -1,4 +1,4 @@
-penpot.ui.open("Dice Roll!", `?theme=${penpot.theme}`, {
+penpot.ui.open("🎲 Dice Roll!", `?theme=${penpot.theme}`, {
   width: 300,
   height: 340,
 });

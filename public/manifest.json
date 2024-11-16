@@ -1,7 +1,7 @@
 {
   "name": "Dice Roll!",
-  "icon": "../src/media/icon.png",
   "code": "plugin.js",
+  "icon": "/src/media/icon.png",
   "description": "A plugin to do dice rolls :)",
   "permissions": ["content:write"]
 }

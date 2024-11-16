@@ -12,6 +12,7 @@ export default defineConfig({
       input: {
         plugin: "src/plugin.ts",
         index: "./index.html",
+        icon: "./src/media/icon.png",
       },
       output: {
         entryFileNames: "[name].js",

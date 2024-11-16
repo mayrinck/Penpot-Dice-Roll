@@ -91,9 +91,9 @@
         }
           random.innerText = Math.round(5 * Math.random() + 1);
           setTimeout(()=>sort(remaining - 1), 50);
-      }
+        }
 
-      roll.addEventListener("click", ()=>{
+        roll.addEventListener("click", ()=>{
           random.style.opacity = "0.4";
           const audio = document.getElementById("dice-" + Math.round(3 * Math.random() + 1));
           audio.play();

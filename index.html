@@ -50,15 +50,15 @@
         font-size: 12px;
         border: none;
         background: #31EFB8;
-        color: 18181a;
+        color: #18181a;
         border-radius: 8px;
-        padding: 10px 20px;
+        padding: 12px;
         cursor: pointer;
         transition: all 150ms ease;
       }
 
       button:hover {
-        background: #ececec;
+        background: #eeeeee;
       }
 
       button:active {
@@ -97,7 +97,7 @@
         }
 
         roll.addEventListener("click", ()=>{
-          random.style.opacity = "0.4";
+          random.style.opacity = "0.32";
           const audio = document.getElementById("dice-" + Math.round(3 * Math.random() + 1));
           audio.play();
           sort(20);

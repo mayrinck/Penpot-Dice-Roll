@@ -1,7 +1,7 @@
 {
-  "name": "Dice Roll!",
+  "name": "Lucky Tools",
   "code": "plugin.js",
-  "icon": "/src/media/icon.png",
-  "description": "A plugin to do dice rolls :)",
+  "icon": "media/icon.png",
+  "description": "A plugin to do dynamics related with luck (like dice roll and flip a coin) ☘",
   "permissions": ["content:write"]
 }

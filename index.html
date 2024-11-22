@@ -14,7 +14,13 @@
       body {
         width: 100vw;
         height: 100vh;
+        overflow: hidden;
         font-family: "Work Sans", sans-serif;
+      }
+
+      section {
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -24,24 +30,6 @@
         padding: 16px 0px;
         user-select: none;
         gap: 16px;
-      }
-
-      .dice {
-        display: flex;
-        flex: 1;
-        flex-shrink: 0;
-        align-items: center;
-        justify-content: center;
-        background: #eeeeee;
-        border-radius: 8px;
-        width: 100%;
-        height: 208px;
-      }
-
-      #text {
-        color: #454545;
-        font-weight: 500;
-        font-size: 120px;
       }
 
       button {
@@ -64,24 +52,84 @@
       button:active {
         transform: translateY(3px);
       }
+
+      .wrapper {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: start;
+        align-content: stretch;
+        justify-content: start;
+        padding: 3px;
+        user-select: none;
+        gap: 8px;
+      }
+
+      .selector {
+        flex: 1;
+        flex-shrink: 0;
+        background: none;
+      }
+
+      .active {
+        font-weight: 600;
+        background: #d6d6d677;
+        color: #6d27d6;
+      }
+
+      .dice {
+        display: flex;
+        flex: 1;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        background: #eeeeee;
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+      }
+
+      #text {
+        color: #454545;
+        font-weight: 500;
+        font-size: 120px;
+      }
+
+      #coin-tool, .wrapper {
+        display: none;
+      }
     </style>
 
-    <title>🎲 Dice Roll!</title>
+    <title>☘ Lucky tools</title>
   </head>
 <!-- -------------------- -->
   <body>
-    <div class="dice">
-      <p id="text">
-        ?
-      </p>
+    <div class="wrapper">
+      <button id="dice-roll" class="selector active">Dice Roll</button>
+      <button id="flip-a-coin" class="selector">Flip a Coin</button>
     </div>
 
-    <button id="roll" type="button">Roll the dice!</button>
+    <section id="dice-tool">
+      <div class="dice">
+        <p id="text">
+          ?
+        </p>
+      </div>
+  
+      <button id="roll" type="button">Roll the dice!</button>
+    </section>
+
+    <section id="coin-tool">
+
+    </section>
 
     <audio id="dice-1"><source src="./src/audio/Dice-1.ogg" type="audio/ogg"></audio>
     <audio id="dice-2"><source src="./src/audio/Dice-2.ogg" type="audio/ogg"></audio>
     <audio id="dice-3"><source src="./src/audio/Dice-3.ogg" type="audio/ogg"></audio>
     <audio id="dice-4"><source src="./src/audio/Dice-4.ogg" type="audio/ogg"></audio>
+    <audio id="coin-flip"><source src="./src/audio/Coin_drop.ogg" type="audio/ogg"></audio>
 
     <script type="module">
       const random = document.getElementById("text");
@@ -96,7 +144,7 @@
           setTimeout(()=>sort(remaining - 1), 34);
         }
 
-        roll.addEventListener("click", ()=>{
+        roll.addEventListener("click", ()=> {
           random.style.opacity = "0.32";
           const audio = document.getElementById("dice-" + Math.round(3 * Math.random() + 1));
           audio.play();
@@ -126,7 +174,6 @@
       } else {
         roll.innerText = "Roll the dice!" //Inglês (fallback)
       }
-
     </script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 penpot.ui.open("Lucky Tools!", `?theme=${penpot.theme}`, {
   width: 300,
-  height: 340,
+  height: 370,
 });
 
 penpot.ui.onMessage<string>((message) => {

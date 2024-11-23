@@ -4,114 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        font-family: "Work Sans", sans-serif;
-      }
-
-      section {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: start;
-        align-content: stretch;
-        justify-content: start;
-        padding: 16px 0px;
-        user-select: none;
-        gap: 16px;
-      }
-
-      button {
-        width: 100%;
-        font-family: inherit;
-        font-size: 12px;
-        border: none;
-        background: #31EFB8;
-        color: #18181a;
-        border-radius: 8px;
-        padding: 12px;
-        cursor: pointer;
-        transition: all 150ms ease;
-      }
-
-      button:hover {
-        background: #eeeeee;
-      }
-
-      button:active {
-        transform: translateY(3px);
-      }
-
-      .wrapper {
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: start;
-        align-content: stretch;
-        justify-content: start;
-        padding: 3px;
-        user-select: none;
-        gap: 8px;
-      }
-
-      .selector {
-        flex: 1;
-        flex-shrink: 0;
-        background: none;
-      }
-
-      .active {
-        font-weight: 600;
-        background: #d6d6d677;
-        color: #6d27d6;
-      }
-
-      .dice {
-        display: flex;
-        flex: 1;
-        flex-shrink: 0;
-        align-items: center;
-        justify-content: center;
-        background: #eeeeee;
-        border-radius: 8px;
-        width: 100%;
-        height: 100%;
-      }
-
-      #text {
-        color: #454545;
-        font-weight: 500;
-        font-size: 120px;
-      }
-
-      #coin-tool, .wrapper {
-        display: none;
-      }
-    </style>
+    <link rel="stylesheet" href="./src/default.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <script src="./src/main.js" type="module"></script>
 
     <title>☘ Lucky tools</title>
   </head>
-<!-- -------------------- -->
-  <body>
-    <div class="wrapper">
-      <button id="dice-roll" class="selector active">Dice Roll</button>
-      <button id="flip-a-coin" class="selector">Flip a Coin</button>
-    </div>
 
+  <body>
     <section id="dice-tool">
+      <div class="wrapper mode-selector">
+        <label id="dice-roll">
+          <span>Dice Roll</span>
+          <input type="radio" name="switch" value="dice" checked>
+        </label>
+
+        <label id="flip-a-coin">
+          <span>Heads or Tails</span>
+          <input type="radio" name="switch" value="coin">
+        </label>
+      </div>
+
       <div class="dice">
         <p id="text">
           ?
@@ -121,59 +37,10 @@
       <button id="roll" type="button">Roll the dice!</button>
     </section>
 
-    <section id="coin-tool">
-
-    </section>
-
     <audio id="dice-1"><source src="./src/audio/Dice-1.ogg" type="audio/ogg"></audio>
     <audio id="dice-2"><source src="./src/audio/Dice-2.ogg" type="audio/ogg"></audio>
     <audio id="dice-3"><source src="./src/audio/Dice-3.ogg" type="audio/ogg"></audio>
     <audio id="dice-4"><source src="./src/audio/Dice-4.ogg" type="audio/ogg"></audio>
     <audio id="coin-flip"><source src="./src/audio/Coin_drop.ogg" type="audio/ogg"></audio>
-
-    <script type="module">
-      const random = document.getElementById("text");
-      const roll = document.getElementById("roll");
-
-      function sort(remaining) {
-        if (remaining < 0) {
-          random.style.opacity = "1";
-          return;
-        }
-          random.innerText = Math.round(5 * Math.random() + 1);
-          setTimeout(()=>sort(remaining - 1), 34);
-        }
-
-        roll.addEventListener("click", ()=> {
-          random.style.opacity = "0.32";
-          const audio = document.getElementById("dice-" + Math.round(3 * Math.random() + 1));
-          audio.play();
-          sort(20);
-      })
-
-      const lang = navigator.language || navigator.userLanguage;
-
-      if (lang == "pt" || lang == "pt-BR") {
-        roll.innerText = "Role os dados!" //Português
-      } else if (lang == "es") { 
-        roll.innerText = "¡tira los dados!" //Espanhol
-      } else if (lang == "ru") { 
-        roll.innerText = "бросьте кости!" //Russo
-      } else if (lang == "eo") { 
-        roll.innerText = "rulu la ĵetkubojn!" //Esperanto
-      } else if (lang == "de") { 
-        roll.innerText = "Lass die Würfel rollen!" //Alemão
-      } else if (lang == "fr") { 
-        roll.innerText = "lancez les dés!" //Francês
-      } else if (lang == "ko") { 
-        roll.innerText = "주사위를 굴려라!" //Coreano
-      } else if (lang == "ja") { 
-        roll.innerText = "サイコロを振る" //Japonês
-      } else if (lang == "zh") { 
-        roll.innerText = "掷骰子" //Chinês
-      } else {
-        roll.innerText = "Roll the dice!" //Inglês (fallback)
-      }
-    </script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 {
   "name": "Lucky Tools",
-  "code": "Penpot-Lucky-Tools/main.js",
-  "icon": "Penpot-Lucky-Tools/icon.png",
+  "code": "./main.js",
+  "icon": "./icon.png",
   "description": "A plugin to do dynamics related with luck (like dice roll and heads or tails). Test your luck ☘",
   "permissions": ["content:write"]
 }

@@ -1,7 +1,7 @@
 {
   "name": "Lucky Tools",
-  "code": "plugin.js",
-  "icon": "media/icon.png",
-  "description": "A plugin to do dynamics related with luck (like dice roll and heads or tails) ☘",
+  "code": "./main.js",
+  "icon": "./src/media/icon.png",
+  "description": "A plugin to do dynamics related with luck (like dice roll and heads or tails). Test your luck ☘",
   "permissions": ["content:write"]
 }

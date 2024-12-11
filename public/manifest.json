@@ -2,6 +2,6 @@
   "name": "Lucky Tools",
   "code": "plugin.js",
   "icon": "media/icon.png",
-  "description": "A plugin to do dynamics related with luck (like dice roll and flip a coin) ☘",
+  "description": "A plugin to do dynamics related with luck (like dice roll and heads or tails) ☘",
   "permissions": ["content:write"]
 }

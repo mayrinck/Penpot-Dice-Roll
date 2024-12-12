@@ -7,12 +7,13 @@ export default defineConfig({
       reload: true,
     }),
   ],
+  base: "/Penpot-Lucky-Tools/",
   build: {
     rollupOptions: {
       input: {
         plugin: "src/plugin.ts",
         index: "./index.html",
-        icon: "./src/media/icon.png",
+        icon: "./public/icon.png",
       },
       output: {
         entryFileNames: "[name].js",

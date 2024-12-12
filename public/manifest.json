@@ -1,7 +1,7 @@
 {
   "name": "Lucky Tools",
-  "code": "https://mayrinck.github.io/Penpot-Lucky-Tools/public/main.js",
-  "icon": "https://mayrinck.github.io/Penpot-Lucky-Tools/public/icon.png",
+  "code": "/Penpot-Lucky-Tools/plugin.js",
+  "icon": "/Penpot-Lucky-Tools/icon.png",
   "description": "A plugin to do dynamics related with luck (like dice roll and heads or tails). Test your luck ☘",
   "permissions": ["content:write"]
 }

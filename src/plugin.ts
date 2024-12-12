@@ -1,4 +1,4 @@
-penpot.ui.open("Lucky Tools!", `?theme=${penpot.theme}`, {
+penpot.ui.open("Lucky Tools!", `Penpot-Lucky-Tools/?theme=${penpot.theme}`, {
   width: 300,
   height: 370,
 });
